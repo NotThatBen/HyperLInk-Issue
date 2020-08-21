@@ -1,0 +1,27 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <DataTemplate x:Key="uri_mailtoTemplate">
+        <TextBlock
+            TextTrimming="CharacterEllipsis">
+            <TextBlock.Inlines>
+                <Hyperlink
+                    NavigateUri="{Binding}">
+                    <ContentPresenter>
+                        <ContentPresenter.Content>
+                            <TextBlock>
+                                <TextBlock.Text>
+                                    <MultiBinding StringFormat="{}{0}@{1}">
+                                        <Binding Path="UserInfo" Mode="OneWay" />
+                                        <Binding Path="Host" Mode="OneWay" />
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </ContentPresenter.Content>
+                    </ContentPresenter>
+                </Hyperlink>
+            </TextBlock.Inlines>
+        </TextBlock>
+    </DataTemplate>
+</ResourceDictionary>
