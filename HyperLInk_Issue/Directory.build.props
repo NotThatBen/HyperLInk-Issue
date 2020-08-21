@@ -1,0 +1,15 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <!-- Project properties -->
+    <PropertyGroup>
+        <TargetFrameworks>net48;netcoreapp3.1</TargetFrameworks>
+        <AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
+        <GenerateDocumentationFile>false</GenerateDocumentationFile>
+        <AutoGenerateBindingRedirects Condition=" $(TargetFramework.StartsWith('net4')) ">true</AutoGenerateBindingRedirects>
+        <LangVersion>8.0</LangVersion>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <NoWarn>$(NoWarn);CS1591</NoWarn>
+        <NoError>$(NoError);CS1591</NoError>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+</Project>
