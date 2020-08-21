@@ -3,23 +3,28 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <DataTemplate x:Key="uri_mailtoTemplate">
-        <TextBlock
-            TextTrimming="CharacterEllipsis">
+        <TextBlock>
             <TextBlock.Inlines>
                 <Hyperlink
                     NavigateUri="{Binding}">
-                    <ContentPresenter>
-                        <ContentPresenter.Content>
-                            <TextBlock>
-                                <TextBlock.Text>
-                                    <MultiBinding StringFormat="{}{0}@{1}">
-                                        <Binding Path="UserInfo" Mode="OneWay" />
-                                        <Binding Path="Host" Mode="OneWay" />
-                                    </MultiBinding>
-                                </TextBlock.Text>
-                            </TextBlock>
-                        </ContentPresenter.Content>
-                    </ContentPresenter>
+                    <Hyperlink.Inlines>
+                        <InlineUIContainer>
+                            <InlineUIContainer.Child>
+                                <ContentPresenter>
+                                    <ContentPresenter.Content>
+                                        <TextBlock>
+                                            <TextBlock.Text>
+                                                <MultiBinding StringFormat="{}{0}@{1}">
+                                                    <Binding Path="UserInfo" Mode="OneWay" />
+                                                    <Binding Path="Host" Mode="OneWay" />
+                                                </MultiBinding>
+                                            </TextBlock.Text>
+                                        </TextBlock>
+                                    </ContentPresenter.Content>
+                                </ContentPresenter>
+                            </InlineUIContainer.Child>
+                        </InlineUIContainer>
+                    </Hyperlink.Inlines>
                 </Hyperlink>
             </TextBlock.Inlines>
         </TextBlock>

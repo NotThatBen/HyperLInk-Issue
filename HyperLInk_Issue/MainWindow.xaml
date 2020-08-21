@@ -5,9 +5,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:HyperLInk_Issue"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="MainWindow"
-    Width="800"
-    Height="450"
+    Title="Hyperlink Issue Repro"
+    Width="506"
+    Height="486"
     mc:Ignorable="d">
     <Window.Resources>
         <ResourceDictionary>
@@ -25,34 +25,18 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
-            <ColumnDefinition />
         </Grid.ColumnDefinitions>
-
-        <GroupBox Header="DataGrid">
-            <DataGrid
-                AutoGenerateColumns="False"
-                DisplayMemberPath="Host"
-                GridLinesVisibility="None"
-                ItemsSource="{Binding}">
-                <DataGrid.Columns>
-                    <DataGridTemplateColumn
-                        CellTemplate="{StaticResource uri_mailtoTemplate}" />
-                </DataGrid.Columns>
-            </DataGrid>
-        </GroupBox>
-
         <GroupBox Header="ListBox"
-            Grid.Column="1">
+            Grid.Column="0">
             <ListBox
                 ItemTemplate="{StaticResource uri_mailtoTemplate}"
                 ItemsSource="{Binding}" />
         </GroupBox>
         <GroupBox Header="ListView"
-            Grid.Column="2">
+            Grid.Column="1">
             <ListView
                 ItemTemplate="{StaticResource uri_mailtoTemplate}"
                 ItemsSource="{Binding}" />
         </GroupBox>
-
     </Grid>
 </Window>
